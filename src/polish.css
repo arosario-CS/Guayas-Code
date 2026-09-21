@@ -1,0 +1,327 @@
+/* =========================================================
+   Final customer-facing polish
+   Loaded after index.css and component styles.
+   ========================================================= */
+
+/* -------------------- */
+/* Global interaction */
+/* -------------------- */
+
+::selection {
+  background: #fcd116;
+  color: #071f4a;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #fcd116;
+  outline-offset: 4px;
+}
+
+/* -------------------- */
+/* Sticky-nav anchor spacing */
+/* -------------------- */
+
+#menu,
+#contact {
+  scroll-margin-top: 105px;
+}
+
+/* -------------------- */
+/* Navbar polish */
+/* -------------------- */
+
+.navbar {
+  gap: 1rem;
+}
+
+.navbar-links {
+  min-width: 0;
+}
+
+.navbar-logo {
+  border-radius: 50%;
+}
+
+.navbar-logo:focus-visible {
+  outline: 3px solid #fcd116;
+  outline-offset: 4px;
+}
+
+.language-button:focus-visible {
+  outline: 2px solid #003893;
+  outline-offset: 2px;
+}
+
+.navbar-order-link:focus-visible {
+  outline-color: #ce1126;
+}
+
+/* -------------------- */
+/* Hero polish */
+/* -------------------- */
+
+.hero-button span {
+  transition: transform 0.2s ease;
+}
+
+.hero-button:hover span {
+  transform: translateY(3px);
+}
+
+/* -------------------- */
+/* Category navigation */
+/* -------------------- */
+
+.category-filter {
+  position: relative;
+}
+
+.category-button {
+  white-space: nowrap;
+}
+
+.category-button:focus-visible {
+  outline: 3px solid #fcd116;
+  outline-offset: 3px;
+}
+
+/* -------------------- */
+/* Menu cards */
+/* -------------------- */
+
+.menu-card {
+  height: 100%;
+}
+
+.menu-card-content {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card-description {
+  flex-grow: 1;
+}
+
+.menu-card-options {
+  margin-top: auto;
+}
+
+/*
+  Gives newly-rendered cards a subtle entrance.
+  This is intentionally restrained so the menu
+  doesn't feel overly animated.
+*/
+
+.menu-card {
+  animation: menu-card-enter 0.3s ease both;
+}
+
+.menu-card-grid .menu-card:nth-child(2) {
+  animation-delay: 0.035s;
+}
+
+.menu-card-grid .menu-card:nth-child(3) {
+  animation-delay: 0.07s;
+}
+
+.menu-card-grid .menu-card:nth-child(4) {
+  animation-delay: 0.105s;
+}
+
+.menu-card-grid .menu-card:nth-child(5) {
+  animation-delay: 0.14s;
+}
+
+.menu-card-grid .menu-card:nth-child(6) {
+  animation-delay: 0.175s;
+}
+
+@keyframes menu-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------- */
+/* Full menu button */
+/* -------------------- */
+
+.full-menu-button span {
+  transition: transform 0.2s ease;
+}
+
+.full-menu-button:hover span {
+  transform: translate(2px, -2px);
+}
+
+/* -------------------- */
+/* Order section */
+/* -------------------- */
+
+.order-button:focus-visible,
+.order-phone:focus-visible {
+  outline: 3px solid #fcd116;
+  outline-offset: 4px;
+}
+
+/* -------------------- */
+/* Modal */
+/* -------------------- */
+
+.menu-modal-backdrop {
+  animation: modal-backdrop-enter 0.2s ease both;
+}
+
+.menu-modal {
+  animation: modal-enter 0.25s ease both;
+}
+
+@keyframes modal-backdrop-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.menu-modal-close:focus-visible,
+.menu-modal-primary-button:focus-visible,
+.menu-modal-secondary-button:focus-visible {
+  outline: 3px solid #fcd116;
+  outline-offset: 3px;
+}
+
+/* -------------------- */
+/* Hover effects only where hover exists */
+/* -------------------- */
+
+@media (hover: hover) {
+  .menu-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .menu-card:hover .menu-card-image {
+    transform: scale(1.03);
+  }
+}
+
+/* -------------------- */
+/* Tablet / Mobile navbar */
+/* -------------------- */
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .navbar-logo img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .navbar-links {
+    gap: 0.5rem;
+  }
+
+  .navbar-link {
+    display: none;
+  }
+
+  .navbar-order-link {
+    padding: 0.6rem 0.85rem;
+
+    font-size: 0.82rem;
+  }
+
+  .language-toggle {
+    flex-shrink: 0;
+  }
+
+  .language-button {
+    padding: 0.42rem 0.52rem;
+  }
+}
+
+/* -------------------- */
+/* Smaller phones */
+/* -------------------- */
+
+@media (max-width: 390px) {
+  .navbar {
+    padding-inline: 0.6rem;
+  }
+
+  .navbar-logo img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .navbar-order-link {
+    padding: 0.55rem 0.7rem;
+
+    font-size: 0.76rem;
+  }
+
+  .language-button {
+    font-size: 0.7rem;
+  }
+
+  .hero-inner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .menu-area {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+}
+
+/* -------------------- */
+/* Reduced motion */
+/* -------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
