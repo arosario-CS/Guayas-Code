@@ -3,7 +3,7 @@ import { translations } from "../data/translations";
 import type { Language } from "../types/language";
 import type { Category } from "../types/menu";
 
-export type FilterCategory = "all" | Category;
+export type FilterCategory = Category;
 
 interface CategoryFilterProps {
   selectedCategory: FilterCategory;
@@ -12,7 +12,6 @@ interface CategoryFilterProps {
 }
 
 const categories: FilterCategory[] = [
-  "all",
   "Platos Típicos",
   "Acompañamientos",
   "Bebidas",
@@ -25,14 +24,6 @@ export default function CategoryFilter({
   language,
 }: CategoryFilterProps) {
   const copy = translations[language];
-
-  const getLabel = (category: FilterCategory) => {
-    if (category === "all") {
-      return copy.menu.all;
-    }
-
-    return copy.categories[category];
-  };
 
   const navigationLabel =
     language === "es" ? "Categorías del menú" : "Menu categories";
@@ -49,7 +40,7 @@ export default function CategoryFilter({
           onClick={() => onCategoryChange(category)}
           aria-pressed={selectedCategory === category}
         >
-          {getLabel(category)}
+          {copy.categories[category]}
         </button>
       ))}
     </nav>

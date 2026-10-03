@@ -19,16 +19,15 @@ function App() {
   const [language, setLanguage] = useState<Language>("es");
 
   const [selectedCategory, setSelectedCategory] =
-    useState<FilterCategory>("all");
+    useState<FilterCategory>("Platos Típicos");
 
   const [isFullMenuOpen, setIsFullMenuOpen] = useState(false);
 
   const copy = translations[language];
 
-  const visibleItems =
-    selectedCategory === "all"
-      ? menuItems.filter((item) => item.featured)
-      : menuItems.filter((item) => item.category === selectedCategory);
+  const visibleItems = menuItems.filter(
+    (item) => item.category === selectedCategory,
+  );
 
   useEffect(() => {
     document.documentElement.lang = language;
@@ -58,11 +57,7 @@ function App() {
 
           {visibleItems.length > 0 ? (
             <MenuSection
-              title={
-                selectedCategory === "all"
-                  ? copy.menu.allSectionTitle
-                  : copy.categories[selectedCategory]
-              }
+              title={copy.categories[selectedCategory]}
               items={visibleItems}
               language={language}
             />
