@@ -100,7 +100,7 @@ export const menuItems: MenuItem[] = [
       en: "Goat stew served with yellow rice and sweet plantains.",
     },
     price: 15,
-    image: "/images/seco-de-chivo.jpg",
+    image: "/images/Seco-de-chivo.jpg",
     category: "Platos Típicos",
   },
 
