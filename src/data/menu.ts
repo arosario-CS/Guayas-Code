@@ -100,7 +100,7 @@ export const menuItems: MenuItem[] = [
       en: "Goat stew served with yellow rice and sweet plantains.",
     },
     price: 15,
-    image: "/images/Seco-de-chivo.jpg",
+    image: "/images/seco-de-chivo.jpg",
     category: "Platos Típicos",
   },
 
@@ -120,6 +120,7 @@ export const menuItems: MenuItem[] = [
       en: "Thick potato patties stuffed with cheese and pan-fried until crispy, served alongside salad, Ecuadorian sausages, a fried egg, and peanut sauce.",
     },
     price: 18,
+    image: "/images/Yapingacho.jpg",
     category: "Platos Típicos",
   },
 
@@ -316,6 +317,7 @@ export const menuItems: MenuItem[] = [
       en: "Albacore fish and shrimp simmered in a rich coconut milk sauce served with white rice, sweet plantain, and avocado.",
     },
     price: 22,
+    image: "/images/Encocado-Mixto.jpg",
     category: "Platos Típicos",
   },
 
